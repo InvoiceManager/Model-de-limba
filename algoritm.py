@@ -20,18 +20,24 @@ def fileWords():
 
 def filePair():
     with open("pair.txt","w+") as file2:
-    for i in range(0,len(listOfTokens)-1):
-        count = 0
-        word1 = listOfTokens[i]
-        word2 = listOfTokens[i+1]
-        for j in range(0,len(listOfTokens)-1):
-            if(word1 == listOfTokens[j] and word2 == listOfTokens[j+1]):
-                count = count + 1
-        file2.write(str(word1) + ' ' + str(word2)+ ' ' + str(count) + '\n')
-    file2.close()
+        for i in range(0,len(listOfTokens)-1):
+            count = 0
+            word1 = listOfTokens[i]
+            word2 = listOfTokens[i+1]
+            for j in range(0,len(listOfTokens)-1):
+                if(word1 == listOfTokens[j] and word2 == listOfTokens[j+1]):
+                    count = count + 1
+            file2.write(str(word1) + ' ' + str(word2)+ ' ' + str(count) + '\n')
+        file2.close()
+
 
 text = readCorpusFromFile(corpusName)
-listOfTokens = tokenizeText(text);
+listOfTokens = tokenizeText(text)
+distinct_count = len(set(listOfTokens))
 # print(len(listOfTokens))
+
+#Marimea vocabularului
+# print(len(set(listOfTokens)))
+
 # fileWords()
 # flePair()
