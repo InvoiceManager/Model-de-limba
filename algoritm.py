@@ -1,9 +1,5 @@
-from nltk.tokenize import word_tokenize, casual_tokenize
-from nltk.tokenize import sent_tokenize, word_tokenize
-import nltk
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+from nltk.tokenize import word_tokenize, casual_tokenize, sent_tokenize
+
 corpusName = "corpus.txt"
 corppusTagged = "corpus_tagged.txt"
 
@@ -56,7 +52,7 @@ def sentenceTagging(text):
         file3.write(str(list)+'\n')
     file3.close()
 
-text = readCorpusFromFile(corpusName).encode('utf-8')
+text = readCorpusFromFile(corpusName)
 sentenceTagging(text)
 text2=readCorpusFromFile(corppusTagged)
 
